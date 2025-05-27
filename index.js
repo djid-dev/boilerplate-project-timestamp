@@ -39,7 +39,10 @@ app.get("/api/:date?", function (req, res) {
     // Si la fecha es inválida, devuelve un error
     return res.json({ error: "Invalid Date" });
   }
-  
+  console.log("Respuesta (válida):", {
+    unix: date.getTime(),
+    utc: date.toUTCString(),
+  });
 
   res.json({
     unix: date.getTime(),
